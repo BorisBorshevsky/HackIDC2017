@@ -25,7 +25,10 @@ module.exports = {
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 
   //will be generated. Take a look at the bottom of this file
-  postgres: {},
+  postgres: {
+    "user":"root",
+    "password":"hackidc17"
+  },
   sessionTable: 'session',
   googleAnalyticsCode: process.env.GOOGLE_ANALYTICS_CODE || null,
 
@@ -140,5 +143,5 @@ if(process.env.NODE_ENV === 'test-travis') {
 } else if(process.env.NODE_ENV === 'test') {
   module.exports.postgres = 'postgres://yhnavein:123@127.0.0.1/test';
 } else {
-  module.exports.postgres = process.env.DATABASE_URL || 'postgres://yhnavein:123@127.0.0.1/prod';
+  module.exports.postgres = process.env.DATABASE_URL || 'postgres://root:hackidc17@hackidc-17.cxxytqdwgpap.us-east-1.rds.amazonaws.com/line';
 }
