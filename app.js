@@ -33,6 +33,8 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
+var storeController = require('./controllers/store');
+
 
 /**
  * API keys and Passport configuration.
@@ -200,6 +202,14 @@ app.get('/auth/twitter', passport.authenticate('twitter', secrets.twitter.authOp
 app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login', failureFlash: true }), safeRedirectToReturnTo);
 app.get('/auth/linkedin', passport.authenticate('linkedin', secrets.linkedin.authOptions));
 app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRedirect: '/login', failureFlash: true }), safeRedirectToReturnTo);
+
+
+
+
+app.get('/api/store', storeController.getAllStores)
+
+
+
 
 /**
  * Error Handler.

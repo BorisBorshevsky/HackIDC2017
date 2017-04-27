@@ -27,3 +27,4 @@ module.exports = _.extend({
   sequelize: sequelize,
   Sequelize: Sequelize
 }, db);
+

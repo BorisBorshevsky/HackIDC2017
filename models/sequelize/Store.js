@@ -3,25 +3,27 @@
 var config = require('../../config/secrets');
 
 
-
 module.exports = function(db, DataTypes) {
-    var Order = db.define('Order', {
+    var Store = db.define('Store', {
         sid: {
-            type: DataTypes.STRING,
+            type: DataTypes.UUID,
             allowNull: false,
             primaryKey: true
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
         createdAt: DataTypes.DATE,
         products: {
             type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull: false
-        },
-        userId: DataTypes.STRING
+        }
     }, {
-        tableName: config.orderTable,
+        tableName: 'stores',
         timestamps: false
     });
 
 
-    return Order;
+    return Store;
 };
