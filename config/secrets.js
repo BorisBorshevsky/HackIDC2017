@@ -30,6 +30,8 @@ module.exports = {
     "password":"hackidc17"
   },
   sessionTable: 'session',
+  orderTable: 'orders',
+  productTable: 'products',
   googleAnalyticsCode: process.env.GOOGLE_ANALYTICS_CODE || null,
 
   /*  */
