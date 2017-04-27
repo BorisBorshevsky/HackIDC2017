@@ -6,7 +6,7 @@ var config = require('../../config/secrets');
 module.exports = function(db, DataTypes) {
     var Store = db.define('Store', {
         sid: {
-            type: DataTypes.UUID,
+            type: DataTypes.STRING,
             allowNull: false,
             primaryKey: true
         },

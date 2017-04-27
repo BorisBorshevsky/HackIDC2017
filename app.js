@@ -111,11 +111,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-app.use(lusca({
-  csrf: { angular: true },
-  xframe: 'SAMEORIGIN',
-  xssProtection: true
-}));
+// app.use(lusca({
+//   csrf: { angular: true },
+//   xframe: 'SAMEORIGIN',
+//   xssProtection: true
+// }));
 app.use(function(req, res, next) {
   res.locals.user = req.user;
   res.locals.gaCode = secrets.googleAnalyticsCode;
@@ -206,7 +206,11 @@ app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRe
 
 
 
-app.get('/api/store', storeController.getAllStores)
+app.get('/api/store', storeController.GetAllStores)
+app.post('/api/products', storeController.CreateProduct);
+app.post('/api/store', storeController.CreateStore);
+
+
 
 
 
